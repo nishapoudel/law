@@ -133,18 +133,21 @@
 
     <div class="col-4 col-md-3 right-blog">
         <div class="row recent">
+            {% for i in posts %}
             <a href="img/elements/g3.jpg" class="img-gal">
                 <div class="right-gallery-image" style="background: url(img/blog/main-blog/tourists.png);"></div>
                 <div class="content-recent">
                 <p>
-                    OCTOBER 2, 2022
+                    {{i.timestamp}}
+                    {{i.author}}
 
                 </p>
                 <p>
-                    I escaped death! – Guru Gauranga Das.
+                    {{i.title}}
                 </p>
             </div>
             </a>
+            {% endfor %}
 
 
             <a href="img/elements/g3.jpg" class="img-gal">

@@ -3258,7 +3258,10 @@ margin-top: 7%;
   -moz-transition: all 0.3s ease 0s;
   -o-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
+  width: 300px;
+    object-fit: cover;
 }
+
 
 .right-gallery-image{
   height: 100px;
