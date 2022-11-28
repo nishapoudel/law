@@ -35,6 +35,8 @@ INSTALLED_APPS = [
      'material',
      'material.admin',
      'crispy_forms',
+
+
     # 'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -44,6 +46,9 @@ INSTALLED_APPS = [
     'tinymce',
     'lawcaterapp',
 ]
+INSTALLED_APPS += ['django_social_share']
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -60,7 +65,9 @@ ROOT_URLCONF = 'lawcater.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            os.path.join(BASE_DIR, 'templates'),
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

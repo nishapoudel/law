@@ -51,24 +51,26 @@
 		</div>
 		<div class="row justify-content-center">
 			<!-- single-blog -->
+            {% for i in posts %}
 			<div class="col-lg-4 col-md-4 col-sm-6">
 				<div class="single-blog">
 					<div class="blog-thumb">
-						<img class="img-fluid" src="{% static 'img/blog/h-blog1.jpg' %}" alt="">
+						<img class="img-fluid img-home" src="/media/{{i.image}}" alt="">
 					</div>
 					<div class="blog-details">
 						<div class="blog-meta">
-							<span>25 june, 2018 | By Mark Wiens</span>
+							<span>{{i.timestamp}} | {{i.author}}</span>
 						</div>
-						<h5><a href="#">Addiction When Gambling <br>
+						<h5><a href="/post/{{i.slug}}">{{i.title}} <br>
 								Becomes A Problem</a></h5>
-						<p>Computers have become ubiquitous in almost every facet of our lives. At work, desk jockeys spend hours in
-							front of their desktops.</p>
+						<!-- <p>{{i.content}}</p> -->
 					</div>
 				</div>
 			</div>
+
+            {% endfor %}
 			<!-- single-blog -->
-			<div class="col-lg-4 col-md-4 col-sm-6">
+			<!-- <div class="col-lg-4 col-md-4 col-sm-6">
 				<div class="single-blog">
 					<div class="blog-thumb">
 						<img class="img-fluid" src="{% static 'img/blog/h-blog2.jpg' %}" alt="">
@@ -83,9 +85,9 @@
 							front of their desktops.</p>
 					</div>
 				</div>
-			</div>
+			</div> -->
 			<!-- single-blog -->
-			<div class="col-lg-4 col-md-4 col-sm-6">
+			<!-- <div class="col-lg-4 col-md-4 col-sm-6">
 				<div class="single-blog">
 					<div class="blog-thumb">
 						<img class="img-fluid" src="{% static 'img/blog/h-blog3.jpg' %}" alt="">
@@ -100,7 +102,7 @@
 							front of their desktops.</p>
 					</div>
 				</div>
-			</div>
+			</div> -->
 		</div>
 	</div>
 </section>

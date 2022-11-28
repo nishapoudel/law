@@ -33,40 +33,10 @@
 
 
 
-                <a href="img/elements/g1.jpg" class="img-gal">
-
-
-                    <div class="blog-gallery-image" style="background: url(img/blog/main-blog/sexual_female.png);"></div>
-                <p>
-                    OCTOBER 13, 2022
-                    How safe and reliable has law made it to report
-                    cases of sexual offences for women?
-                </p>
-                <p>
-                    Do all the stories that reach the investigate ears actually
-                    reach the investigation process?
-                </p>
-                </a>
 
 
 
-
-                <div>
-                    <a href="img/elements/g1.jpg" class="img-gal">
-                        <div class="blog-gallery-image" style="background: url(img/blog/main-blog/tourists.png);"></div>
-                    <p>
-                        September 7, 2022
-                        In what ways are visitiors tourists protected around the world?
-                    </p>
-                    <p>
-                       In any case, they are aliens to the foreign land for the time being and thus are unware of
-                       the rules, guidelines and regulatory protocols to be adopted while they are there.
-                    </p>
-                    </a>
-                    </div>
-
-
-                    <div>
+                    <!-- <div>
                         <a href="img/elements/g1.jpg" class="img-gal">
                             <div class="blog-gallery-image" style="background: url(img/blog/main-blog/mental\ health.png);"></div>
                         <p>
@@ -77,7 +47,7 @@
                             A different scenario would be us suffering in silence !
                         </p>
                         </a>
-                        </div>
+                        </div> -->
 
                      </div>
                      {% endfor %}
@@ -135,7 +105,8 @@
         <div class="row recent">
             {% for i in posts %}
             <a href="img/elements/g3.jpg" class="img-gal">
-                <div class="right-gallery-image" style="background: url(img/blog/main-blog/tourists.png);"></div>
+                <!-- <div class="right-gallery-image" style="background: url(img/blog/main-blog/tourists.png);"></div> -->
+                <img class="right-gallery-image" src="/media/{{i.image}}" alt="blog">
                 <div class="content-recent">
                 <p>
                     {{i.timestamp}}
@@ -150,43 +121,7 @@
             {% endfor %}
 
 
-            <a href="img/elements/g3.jpg" class="img-gal">
-                <div class="right-gallery-image" style="background: url(img/elements/g3.jpg);"></div>
-                <div class="content-recent">
-                <p>
-                    OCTOBER 2, 2022
 
-                </p>
-                <p>
-                    I escaped death! – Guru Gauranga Das.
-                </p>
-            </div>
-            </a>
-
-            <a href="img/elements/g3.jpg" class="img-gal">
-                <div class="right-gallery-image" style="background: url(img/elements/g3.jpg);"></div>
-                <div class="content-recent">
-                <p>
-                    OCTOBER 2, 2022
-
-                </p>
-                <p>
-                    I escaped death! – Guru Gauranga Das.
-                </p>
-            </div>
-            </a>
-            <a href="img/elements/g3.jpg" class="img-gal">
-                <div class="right-gallery-image" style="background: url(img/blog/main-blog/saftey.png);"></div>
-                <div class="content-recent">
-                <p>
-                    OCTOBER 2, 2022
-
-                </p>
-                <p>
-                    I escaped death! – Guru Gauranga Das.
-                </p>
-            </div>
-            </a>
         </div>
 
     </div>

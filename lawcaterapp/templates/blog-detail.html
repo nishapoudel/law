@@ -124,7 +124,39 @@
     margin-left: 3rem;
 }
 
+.wrapper {
+  position: absolute;
+  top: 30%;
+  left: 8%;
+  transform: translate(-50%, -50%);
+  /* position: fixed; */
 
+
+}
+
+ul {
+  list-style: none;
+}
+.wrapper ul div {
+  width: 40px;
+  height: 40px;
+  position: relative;
+
+  margin: 10px 0;
+  cursor: pointer;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+
+}
+.icon-media {
+    position: absolute;
+    top: 35%;
+    left: 39%;
+    transform: translate(-50%, -50%);
+    font-size: 28px;
+    /* color: #fff; */
+
+}
 
 
 
@@ -144,9 +176,37 @@
 
     </div>
 
+    <div class="wrapper">
+        <ul>
+<li>
+    {% load social_share %}
+
+    {% post_to_facebook object_or_url '<i class="fa fa-facebook icon-media" aria-hidden="true"></i>' %}
+
+    {% post_to_twitter "New Share: {{object.title}}" object_or_url '<i class="fa fa-twitter icon-media" aria-hidden="true"></i>' %}
+    {% post_to_whatsapp object_or_url '<i class="fa fa-whatsapp icon-media" aria-hidden="true"></i>'%}
+</li>
+    </ul>
+    </div>
+
+
 
 
 <div class="child stack-top">
+    <div class="wrapper">
+        <ul>
+<li>
+    {% load social_share %}
+
+    {% post_to_facebook object_or_url '<i class="fa fa-facebook icon-media" aria-hidden="true"></i>' %}
+
+    {% post_to_twitter "New Share: {{object.title}}" object_or_url '<i class="fa fa-twitter icon-media" aria-hidden="true"></i>' %}
+    {% post_to_whatsapp object_or_url '<i class="fa fa-whatsapp icon-media" aria-hidden="true"></i>'%}
+</li>
+    </ul>
+    </div>
+
+
     <h1 class="text-center">{{post.tile}} </h1>
 
     <div class="embed-responsive embed-responsive-16by9 youtube-video">
