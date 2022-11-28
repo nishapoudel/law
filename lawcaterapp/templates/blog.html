@@ -19,12 +19,13 @@
             <a href="/post/{{i.slug}}" class="img-gal">
                 <!-- <div class="blog-gallery-image" style="background: url(img/blog/main-blog/caste.png);"></div> -->
                 <img class="blog-gallery-image" src="/media/{{i.image}}" alt="girl">
-                <p>
+                <p class="date">
                     {{i.author}}
-                NOVEMBER 3, 2022
+                    {{i.timestamp}}
+
 
             </p>
-            <p>
+            <p class="titles">
                 {{i.title}}
 
             </p>
@@ -108,12 +109,12 @@
                 <!-- <div class="right-gallery-image" style="background: url(img/blog/main-blog/tourists.png);"></div> -->
                 <img class="right-gallery-image" src="/media/{{i.image}}" alt="blog">
                 <div class="content-recent">
-                <p>
+                <p class="date">
                     {{i.timestamp}}
                     {{i.author}}
 
                 </p>
-                <p>
+                <p class="titles">
                     {{i.title}}
                 </p>
             </div>
