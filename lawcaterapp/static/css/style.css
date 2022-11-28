@@ -3244,22 +3244,23 @@ margin-top: 7%;
     margin: 1rem auto;
 
 }
-.right-blog{
+/* .right-blog{
   margin-left: 2rem;
-}
+} */
 
 .blog-gallery-image {
   margin-top: 30px;
   background-repeat: no-repeat !important;
   background-position: center center !important;
   background-size: cover !important;
-  height: 400px;
+  height: 250px;
   -webkit-transition: all 0.3s ease 0s;
   -moz-transition: all 0.3s ease 0s;
   -o-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
-  width: 300px;
+  width: 350px;
     object-fit: cover;
+
 }
 
 
@@ -3332,7 +3333,9 @@ margin-top: 7%;
   width: 90%;
   padding: 80px;
   box-shadow: 0px 1px 0px #e5e5e5;
+  border-radius: 1%;
 }
+
 
 .single-img {
   width: 90%;

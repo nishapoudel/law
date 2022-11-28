@@ -4,9 +4,12 @@
 
 
  <div class="image ">
-    <img  class="img-fluid" src=" {% static 'img/blog/image5.png" alt="roller coaster">
+    <img  class="img-fluid" src=" {% static 'img/blog/image5.png' %}" alt="roller coaster">
 
 </div>
+
+
+
 
 
 
@@ -14,14 +17,13 @@
     <div class="col-12 col-md-8 ">
         <div class="row">
                     {% for i in posts %}
-                    <div class="col-6 col-md-6 ">
+                    <div class=" col-md-6 ">
 
             <a href="/post/{{i.slug}}" class="img-gal">
-                <!-- <div class="blog-gallery-image" style="background: url(img/blog/main-blog/caste.png);"></div> -->
+
                 <img class="blog-gallery-image" src="/media/{{i.image}}" alt="girl">
                 <p class="date">
-                    {{i.author}}
-                    {{i.timestamp}}
+                        {{i.timestamp}}
 
 
             </p>
@@ -37,67 +39,9 @@
 
 
 
-                    <!-- <div>
-                        <a href="img/elements/g1.jpg" class="img-gal">
-                            <div class="blog-gallery-image" style="background: url(img/blog/main-blog/mental\ health.png);"></div>
-                        <p>
-                            August 27, 2022
-                            How are mental health service and professionals regulated
-                        </p>
-                        <p>
-                            A different scenario would be us suffering in silence !
-                        </p>
-                        </a>
-                        </div> -->
-
                      </div>
                      {% endfor %}
 
-        <!-- <div class="col-6 col-md-6">
-            <a href="img/elements/g3.jpg" class="img-gal">
-                <div class="blog-gallery-image" style="background: url(img/blog/main-blog/sexual_male.png);"></div>
-                <p>
-                    OCTOBER 15, 2022
-                    Have our laws recognized sexual offences against male?
-                </p>
-                <p>
-                    Should crime and offences be subject to gender distinction?
-                </p>
-            </a>
-
-
-            <a href="img/elements/g3.jpg" class="img-gal">
-                <div class="blog-gallery-image" style="background: url(img/blog/main-blog/saftey.png);"></div>
-                <p>
-                    September 13, 2022
-                    Are there any saftey protocols adventure industry needs to comply with?
-                </p>
-                <p>
-                    Are we paying attention to the possible doubts regarding the saftey measure employed
-                    by these business?
-                </p>
-            </a>
-            <a href="img/elements/g3.jpg" class="img-gal">
-                <div class="blog-gallery-image" style="background: url(img/blog/main-blog/urban_agriculture.png);"></div>
-                <p>
-                    August 16, 2022
-                    Can rooftop farming be prompted as a way of urban agriculture?
-                </p>
-                <p>
-                    Has rooftop farming been effective in its benefits!
-                </p>
-            </a>
-            <a href="img/elements/g3.jpg" class="img-gal">
-                <div class="blog-gallery-image" style="background: url(img/blog/main-blog/saftey.png);"></div>
-                <p>
-                    August 12, 2022
-                    Has the concept of torts made enough space in Nepalese legal mainstream?
-                </p>
-                <p>
-                    Law are subject to change according to the changes in society.
-                </p>
-            </a>
-        </div> -->
 
         </div>
         </div>
