@@ -59,7 +59,7 @@
 					</div>
 					<div class="blog-details">
 						<div class="blog-meta">
-							<span>{{i.timestamp}} | {{i.author}}</span>
+							<span>{{i.timestamp|date:"F d, Y"}} | {{i.author}}</span>
 						</div>
 						<h5><a href="/post/{{i.slug}}">{{i.title}} <br>
 								Becomes A Problem</a></h5>
@@ -69,6 +69,8 @@
 			</div>
 
             {% endfor %}
+            <a href="-blog/" class="btn btn-info ">Read More</a>
+
 			<!-- single-blog -->
 			<!-- <div class="col-lg-4 col-md-4 col-sm-6">
 				<div class="single-blog">
@@ -104,6 +106,7 @@
 				</div>
 			</div> -->
 		</div>
+
 	</div>
 </section>
 

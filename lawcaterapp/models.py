@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth import get_user_model
 
 from tinymce.models import HTMLField
+from datetime import date
 
 
 class Category(models.Model):
@@ -19,13 +20,23 @@ class Post(models.Model):
     title = models.CharField(max_length=100)
     slug = models.SlugField(max_length=1000)
     timestamp = models.DateTimeField(auto_now_add=True)
+
     content = HTMLField()
     author = models.CharField(max_length=50)
     categories = models.ForeignKey(Category, on_delete=models.CASCADE)
     image = models.ImageField(upload_to='post/')
+    publish=models.BooleanField()
+    read=models.IntegerField(default=0)
+
+    class Meta:
+        ordering=['-post_id']
 
     def __str__(self):
         return self.title
+
+    def convert_str_date(value):
+        return timestamp.strptime(value, '%Y-%m-%d').date()
+
 
 
 class Comment(models.Model):

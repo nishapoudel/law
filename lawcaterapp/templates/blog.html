@@ -16,14 +16,14 @@
 <div class="row row-blog">
     <div class="col-12 col-md-8 ">
         <div class="row">
-                    {% for i in posts %}
+                    {% for i in page %}
                     <div class=" col-md-6 ">
 
             <a href="/post/{{i.slug}}" class="img-gal">
 
                 <img class="blog-gallery-image" src="/media/{{i.image}}" alt="girl">
                 <p class="date">
-                        {{i.timestamp}}
+                    {{i.timestamp|date:"F d, Y"}}
 
 
             </p>
@@ -46,7 +46,7 @@
         </div>
         </div>
 
-    <div class="col-4 col-md-3 right-blog">
+    <div class="col-4 col-md-4 right-blog">
         <div class="row recent">
             {% for i in posts %}
             <a href="img/elements/g3.jpg" class="img-gal">
@@ -54,7 +54,7 @@
                 <img class="right-gallery-image" src="/media/{{i.image}}" alt="blog">
                 <div class="content-recent">
                 <p class="date">
-                    {{i.timestamp}}
+                    {{i.timestamp|date:"F d, Y"}}
                     {{i.author}}
 
                 </p>
@@ -75,18 +75,30 @@
 <!----pagination-->
 <nav aria-label="Page navigation example">
     <ul class="pagination justify-content-center">
-      <li class="page-item disabled">
-        <a class="page-link" href="#" tabindex="-1">❮</a>
+        {% if page.has_previous %}
+      <li class="page-item ">
+        <a class="page-link" href="?page={{page.previous_page_number}}" >❮</a>
       </li>
-      <li class="page-item"><a class="page-link" href="#">1</a></li>
-      <li class="page-item"><a class="page-link" href="blog1.html">2</a></li>
-      <li class="page-item"><a class="page-link" href="#">3</a></li>
-      <li class="page-item"><a class="page-link" href="#">4</a></li>
-      <li class="page-item"><a class="page-link" href="#">5</a></li>
-      <li class="page-item"><a class="page-link" href="#">6</a></li>
+      {% endif %}
+
+      {% for num_page in page.paginator.page_range %}
+      <br/>
+      {% if page.number == num_page %}
+      <li class="page-item active"><a class="page-link" href="?page={{num_page}}">{{num_page}}</a></li>
+
+
+      {% else %}
+      <li class="page-item "><a class="page-link" href="?page={{num_page}}">{{num_page}}</a></li>
+        {% endif %}
+        <br/>
+      {% endfor %}
+
+
+      {% if page.has_next %}
       <li class="page-item">
-        <a class="page-link" href="#">❯</a>
+        <a class="page-link" href="?page={{page.next_page_number}}">❯</a>
       </li>
+      {% endif %}
     </ul>
   </nav>
 

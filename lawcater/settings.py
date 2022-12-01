@@ -29,6 +29,17 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+AUTHENTICATION_BACKENDS = (
+    # Needed to login by username in Django admin, regardless of `allauth`
+    "django.contrib.auth.backends.ModelBackend",
+
+    # `allauth` specific authentication methods, such as login by e-mail
+    "allauth.account.auth_backends.AuthenticationBackend",
+)
+
+
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -45,6 +56,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'tinymce',
     'lawcaterapp',
+
 ]
 INSTALLED_APPS += ['django_social_share']
 
@@ -139,4 +151,17 @@ MEDIA_ROOT= os.path.join(BASE_DIR, 'media')
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+# EMAI_HOST='smtp.gmail.com'
+# EMAIL_PORT=587
+# EMAIL_HOST_USER= 'lawcaters@gmail.com'
+# EMAIL_HOST_PASSWORD= 'wegotthis'
+# EMAIL_USE_TLS=True
+
+# EMAIL_HOST='smtp.gmail.com'
+# EMAIL_PORT=587
+# EMAIL_HOST_USER ='lawcaters@gmail.com'
+# EMAIL_HOST_PASSWORD='jgammkehbrroaszn'
+# EMAIL_HOST_USER ='nishapoudel400@gmail.com'
+# EMAIL_HOST_PASSWORD='kojjvctzykizilbp'
+# EMAIL_USE_TLS=True
+

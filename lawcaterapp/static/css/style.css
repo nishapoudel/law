@@ -817,6 +817,8 @@ button:focus {
 /* Start video Area css
 ============================================================================================ */
 @media (max-width: 768px) {
+
+
   .video-sec-area {
     padding-top: 0px; } }
 
@@ -3258,7 +3260,8 @@ margin-top: 7%;
   -moz-transition: all 0.3s ease 0s;
   -o-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
-  width: 350px;
+  /* width: 350px; */
+  width: 90%;
     object-fit: cover;
 
 }
@@ -3274,7 +3277,7 @@ margin-top: 7%;
 }
 .recent a{
   display: flex;
-  margin-left: 3rem;
+  margin-left: 1rem;
 }
 .content-recent {
   display: flex;
@@ -3393,6 +3396,9 @@ margin-top: 7%;
 .content-main {
   margin: 2rem 1rem;
 }
+.col-4{
+  max-width: 100%;
+}
 }
 .w-100 {
   width: 100% !important;
@@ -3400,10 +3406,10 @@ margin-top: 7%;
   object-fit: cover;
 }
 .img-home {
-  /* max-width: 100%; */
-  /* height: auto; */
-  height: 200px;
-  max-width: 80%;
+
+    height: 250px;
+
+    width: 80%;
 }
 .row-blog .date{
   color:#53727a !important;
@@ -3427,3 +3433,14 @@ margin-top: 7%;
   width:100%;
   position:absolute;
   }
+
+
+  @media screen and (min-width: 800px)
+  {
+    .recent a {
+
+      margin-left: 3rem ;
+    }
+  }
+
+
