@@ -51,7 +51,7 @@
 						<ul class="nav navbar-nav menu_nav ml-auto">
 							<li class="nav-item active"><a class="nav-link" href="{% url 'home' %}">Home</a></li>
 
-							{% for cat in cats %}
+							{% for cat in allcategories %}
 							<li class="nav-item"><a class="nav-link" href="/{{cat.slug}}">{{cat.title}}</a></li>
 							{% endfor %}
 

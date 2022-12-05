@@ -1,8 +1,11 @@
 from django.db import models
 from django.contrib.auth import get_user_model
+from  embed_video.fields  import  EmbedVideoField
 
 from tinymce.models import HTMLField
 from datetime import date
+from django.urls import  reverse
+from mimetypes import guess_type
 
 
 class Category(models.Model):
@@ -20,13 +23,17 @@ class Post(models.Model):
     title = models.CharField(max_length=100)
     slug = models.SlugField(max_length=1000)
     timestamp = models.DateTimeField(auto_now_add=True)
+    video = EmbedVideoField(null=True, blank=True)
 
     content = HTMLField()
     author = models.CharField(max_length=50)
     categories = models.ForeignKey(Category, on_delete=models.CASCADE)
-    image = models.ImageField(upload_to='post/')
+    image = models.ImageField(upload_to='post/',default='default.jpg')
     publish=models.BooleanField()
     read=models.IntegerField(default=0)
+
+
+
 
     class Meta:
         ordering=['-post_id']
@@ -34,8 +41,9 @@ class Post(models.Model):
     def __str__(self):
         return self.title
 
-    def convert_str_date(value):
-        return timestamp.strptime(value, '%Y-%m-%d').date()
+    def get_absolute_url(self):
+       return reverse('lawcaterapp:post_detail',args=[self.id,])
+
 
 
 

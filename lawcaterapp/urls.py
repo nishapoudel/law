@@ -6,9 +6,10 @@ from django.views.generic import TemplateView
 
 
 urlpatterns = [
-    path('', homepage, name = 'home'),
+    # path('', homepage, name = 'home'),
     #  path('story/', Story, name = 'story'),
 
+path("", homepage.as_view(), name='home'),
 
 
      path('post/<slug>/', detail, name = 'detail'),
@@ -16,8 +17,12 @@ urlpatterns = [
 
     # path('post/<slug>/', post, name = 'post'),
 
-      path("team/", team, name="team"),
+      # path("team/", team, name="team"),
+      path("team/", team.as_view(), name='team'),
+
      path("contact/", contact, name="contact"),
+      # path("contact/", contact.as_view(), name='contact'),
+
 
     #  path("sendmail/", sendmail, name="sendmail"),
 

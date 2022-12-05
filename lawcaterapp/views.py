@@ -8,35 +8,45 @@ from django.shortcuts import render, redirect
 from django.core.mail import send_mail
 from lawcaterapp.forms import ContactForm
 from django.core.paginator import Paginator , EmptyPage, PageNotAnInteger
-from django.core.paginator import Paginator
+from django.http import HttpResponse
+from django.views.generic import TemplateView
+
 # Create your views here.
 
-def homepage(request):
-    cats = Category.objects.all()
-    posts = Post.objects.filter()[0:6]
+# def homepage(request):
+#     cats = Category.objects.all()
+#     posts = Post.objects.filter()[0:6]
+
+#     context= {
+
+#         'posts':posts,
+#         'cats':cats,
+#     }
+#     return render(request, 'homepage.html',context)
+
+class homepage(TemplateView):
+    template_name = "index.html"
 
 
-    # featured = Post.objects.filter(featured=True)
-    # latest = Post.objects.order_by('-timestamp')[0:3]
-    context= {
-        # 'object_list': featured,
-        # 'latest': latest,
-
-        'posts':posts,
-        'cats':cats,
-    }
-    return render(request, 'index.html',context)
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['allcategories'] = Category.objects.all()
+        return context
 
 
 
+class team(TemplateView):
+    template_name = "team.html"
 
-def team(request):
-    return render(request, 'team.html')
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['allcategories'] = Category.objects.all()
+        return context
 
 # for post detail
 def detail(request, slug):
-
+    cats = Category.objects.all()
 
     post = get_object_or_404(Post, slug=slug)
     comments = post.comments.filter(active=True)
@@ -58,7 +68,8 @@ def detail(request, slug):
     return render(request, 'blog-detail.html', {'post': post,
                                            'comments': comments,
                                            'new_comment': new_comment,
-                                           'comment_form': comment_form})
+                                           'comment_form': comment_form,
+                                           'allcategories':cats})
 
     # context = {
     #     'post': post,
@@ -93,10 +104,12 @@ def postByCategory(request,slug):
     #     posts_page= all_post.page(all_post.num_pages)
 
 
-    return render(request, "blog.html",{'page':page,'cat':cat, 'posts':posts,'cats':cats})
+    return render(request, "blog.html",{'page':page,'cat':cat, 'posts':posts,'allcategories':cats})
 
-def contact(request):
-    return render(request, 'contact.html')
+
+
+# def contact(request):
+#     return render(request, 'contact.html')
 
 
 # def sendmail(request):
@@ -136,19 +149,78 @@ def contact(request):
 #         return render(request,'contact.html')
 #     else:
 #         return render(request,'contact.html')
-# def sendmail(request):
+# def contact(request):
 #     if request.method == 'POST':
-#         subject = request.POST.get('subject', '')
-#         message = request.POST.get('message', '')
-#         from_email = request.POST.get('email', '')
-#         send_mail(
-#             subject,
-#             message,
-#             from_email,
-#             ['lawcaters@gmail.com'],
-#             fail_silently=False,
-#         )
+#         name = request.POST.get('name')
+#         subject = request.POST.get( 'subject')
+#         message = request.POST.get('message')
+#         email = request.POST.get('email')
+#         data={
+#             'name':name,
+#             'email':email,
+#             'subject':subject,
+#             'message':message
+#                 }
 
-#         return render(request,'index.html')
-#     else:
-#         return render(request,'contact.html')
+#         send_mail(data['subject'], message,'',['lawcaters@gmail.com'],
+#         fail_silently=False)
+#         return HttpResponse('thank you')
+#     return render(request,'contact.html',{})
+
+
+# def contact(request):
+
+#     allcategories = Category.objects.all()
+#     if request.method == 'POST':
+#         name = request.POST.get('name')
+#         email = request.POST.get('email')
+#         phone = request.POST.get('phone')
+#         message = request.POST.get('message')
+#         form_data = {
+#             'name':name,
+#             'email':email,
+#             'phone':phone,
+#             'message':message,
+#         }
+#         message = '''
+#         From:\n\t\t{}\n
+#         Message:\n\t\t{}\n
+#         Email:\n\t\t{}\n
+#         Phone:\n\t\t{}\n
+#         '''.format(form_data['name'], form_data['message'], form_data['email'],form_data['phone'])
+#         send_mail('You got a mail!', message, '', ['lawcaters@gmail.com']) # TODO: enter your email address
+
+#     return render(request, 'contact.html', {})
+
+
+def contact(request):
+
+    allcategories = Category.objects.all()
+
+    if request.method == 'POST':
+        name = request.POST.get('name')
+        email = request.POST.get('email')
+        phone = request.POST.get('phone')
+        message = request.POST.get('message')
+        form_data = {
+            'name':name,
+            'email':email,
+            'phone':phone,
+            'message':message,
+        }
+        message = '''
+        From:\n\t\t{}\n
+        Message:\n\t\t{}\n
+        Email:\n\t\t{}\n
+        Phone:\n\t\t{}\n
+        '''.format(form_data['name'], form_data['message'], form_data['email'],form_data['phone'])
+        send_mail('You got a mail!', message, '', ['lawcaters@gmail.com']) # TODO: enter your email address
+
+    return render(request, 'contact.html',  {
+
+                                           'allcategories': allcategories})
+
+
+
+
+

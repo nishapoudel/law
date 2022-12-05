@@ -43,6 +43,7 @@ AUTHENTICATION_BACKENDS = (
 # Application definition
 
 INSTALLED_APPS = [
+    'embed_video',
      'material',
      'material.admin',
      'crispy_forms',
@@ -157,11 +158,20 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # EMAIL_HOST_PASSWORD= 'wegotthis'
 # EMAIL_USE_TLS=True
 
+
 # EMAIL_HOST='smtp.gmail.com'
 # EMAIL_PORT=587
-# EMAIL_HOST_USER ='lawcaters@gmail.com'
-# EMAIL_HOST_PASSWORD='jgammkehbrroaszn'
 # EMAIL_HOST_USER ='nishapoudel400@gmail.com'
 # EMAIL_HOST_PASSWORD='kojjvctzykizilbp'
 # EMAIL_USE_TLS=True
+# EMAIL_USE_SSL=False
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+# ALLOWED_HOSTS=[]
 
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'lawcaters@gmail.com'
+EMAIL_HOST_PASSWORD = 'jgammkehbrroaszn'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
