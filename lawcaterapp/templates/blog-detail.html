@@ -139,6 +139,7 @@
     left: 40%;
     transform: translate(-49%, -55%);
     margin: 0.2rem auto;
+    position: fixed;
 
 }
 .wrapper li{
@@ -188,6 +189,7 @@ ul {
 
 
  </style>
+
  <section class=" parent ">
     <div class="banner_inner child">
 
@@ -203,24 +205,24 @@ ul {
 
     </div>
 
+
     <div class="wrapper">
         <ul>
-<li>
+    <li>
     {% load social_share %}
 
     {% post_to_facebook object_or_url '<i class="fa fa-facebook icon-media" aria-hidden="true"></i>' %}
 
     {% post_to_twitter "New Share: {{object.title}}" object_or_url '<i class="fa fa-twitter icon-media" aria-hidden="true"></i>' %}
     {% post_to_whatsapp object_or_url '<i class="fa fa-whatsapp icon-media" aria-hidden="true"></i>'%}
-</li>
+    </li>
     </ul>
     </div>
-
 
 
 
 <div class="child stack-top">
-    <div class="wrapper">
+    <!-- <div class="wrapper">
         <ul>
 <li>
     {% load social_share %}
@@ -231,7 +233,7 @@ ul {
     {% post_to_whatsapp object_or_url '<i class="fa fa-whatsapp icon-media" aria-hidden="true"></i>'%}
 </li>
     </ul>
-    </div>
+    </div> -->
 
 
     <h1 class="text-center">{{post.title}} </h1>
@@ -336,8 +338,7 @@ ul {
           </div>
         </form>
     </div>
-        {% else %}
-        <a class="btn btn-outline-info" href="{% url 'login' %}?next={{request.path}}">Log in to add a comment!</a><br>
+
         {% endif %}
 
     <!-- <form class="form-block"> -->
@@ -347,8 +348,7 @@ ul {
 		<div class="row">
 
 
-<!--
-			<div class="col-xs-12 col-sm-6">
+ <!-- <div class="col-xs-12 col-sm-6">
 				<div class="form-group fl_icon">
 					<div class="icon"><i class="fa fa-user"></i></div>
 					<input class="form-input" type="text" placeholder="Your name">
@@ -365,10 +365,11 @@ ul {
 					<textarea class="form-input" required="" placeholder="Your text"></textarea>
 				</div>
 			</div>
-			<a class="btn btn-primary pull-right">submit</a> -->
-		</div>
+			<a class="btn btn-primary pull-right">submit</a>
+		</div> -->
 
     {% endif %}
+</div>
 </div>
 </div>
 
