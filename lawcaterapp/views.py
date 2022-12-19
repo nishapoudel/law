@@ -48,7 +48,9 @@ class team(TemplateView):
 def detail(request, slug):
     cats = Category.objects.all()
 
-    post = get_object_or_404(Post, slug=slug)
+    # post = get_object_or_404(Post, slug=slug)
+    post = Post.objects.filter(slug=slug).first()
+
     comments = post.comments.filter(active=True)
     # post= Post.objects.get(slug=slug)
     new_comment = None

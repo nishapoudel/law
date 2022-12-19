@@ -49,7 +49,7 @@
     <div class="col-4 col-md-4 right-blog">
         <div class="row recent">
             {% for i in posts %}
-            <a href="img/elements/g3.jpg" class="img-gal">
+            <a href="/post/{{i.slug}}" class="img-gal">
                 <!-- <div class="right-gallery-image" style="background: url(img/blog/main-blog/tourists.png);"></div> -->
                 <img class="right-gallery-image" src="/media/{{i.image}}" alt="blog">
                 <div class="content-recent">

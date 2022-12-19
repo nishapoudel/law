@@ -3,7 +3,7 @@ from django.contrib.auth import get_user_model
 from  embed_video.fields  import  EmbedVideoField
 
 from tinymce.models import HTMLField
-from datetime import date
+from datetime import datetime, date
 from django.urls import  reverse
 from mimetypes import guess_type
 
@@ -21,12 +21,14 @@ class Category(models.Model):
 class Post(models.Model):
     post_id =models.AutoField(primary_key=True)
     title = models.CharField(max_length=100)
-    slug = models.SlugField(max_length=1000)
-    timestamp = models.DateTimeField(auto_now_add=True)
+    slug = models.SlugField(max_length=200)
+    # timestamp = models.DateTimeField(auto_now_add=True)
+    timestamp = models.DateTimeField(auto_now_add=False,auto_now=False,blank=True,null=True)
+    timestamps = models.DateTimeField(auto_now_add=True,auto_now=False,blank=True,null=True)
     video = EmbedVideoField(null=True, blank=True)
 
     content = HTMLField()
-    author = models.CharField(max_length=50)
+    author = models.CharField(max_length=50,null=True, blank=True)
     categories = models.ForeignKey(Category, on_delete=models.CASCADE)
     image = models.ImageField(upload_to='post/',default='default.jpg')
     publish=models.BooleanField()
