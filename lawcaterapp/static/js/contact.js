@@ -114,3 +114,11 @@ function validateForm(){
 function hasNumber(myString) {
     return /\d/.test(myString);
 }
+
+document.getElementById('share-button').addEventListener('click', function() {
+    FB.ui({
+      method: 'send',
+      link: YOUR_URL,
+    });
+  });
+

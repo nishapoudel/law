@@ -3471,7 +3471,7 @@ margin-top: 7%;
 }
 .wrapper {
   position: absolute;
-  top: 34% !important;
+  top: 45% !important;
   left: 8% !important;
   transform: translate(-50%, -50%);
   /* position: fixed; */
@@ -3568,4 +3568,10 @@ margin-top: 7%;
 }
 .title-team{
   padding-top: 6px;
+}
+
+i.fab.fa-telegram {
+  font-size: 18px;
+  /* padding-top: 15px; */
+  margin: 0.5rem 0.3rem;
 }
