@@ -215,6 +215,10 @@ ul {
 
 
 <div class="child stack-top">
+
+
+
+    <h1 class="text-center">{{post.title}} </h1>
     <div class="wrapper">
         <ul>
     <li>
@@ -227,12 +231,9 @@ ul {
     {% post_to_whatsapp object_or_url '<i class="fa fa-whatsapp icon-media" aria-hidden="true"></i>'%}
     {% post_to_telegram "Share: {{object.title}}" object_or_url '<i class="fab fa-telegram icon-media" aria-hidden="true"></i>'  %}
 
-</li>
+    </li>
     </ul>
     </div>
-
-
-    <h1 class="text-center">{{post.title}} </h1>
 
     {% if post.video %}
 

@@ -3471,9 +3471,11 @@ margin-top: 7%;
 }
 .wrapper {
   position: absolute;
-  top: 45% !important;
-  left: 8% !important;
-  transform: translate(-50%, -50%);
+  /* top: 35% !important; */
+  left: 4% !important;
+  margin-top: 2.5rem !important;
+  /* transform: translate(-50%, -50%); */
+  z-index: 999;
   /* position: fixed; */
 
 
@@ -3528,19 +3530,21 @@ margin-top: 7%;
 
 .wrapper {
   position: absolute;
-  top: 32%;
+  margin-top: -1.5rem;
+    margin-left: 2rem;
+  /* top: 32%;
   left: 8%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); */
 
 
 
 }
 .wrapper {
     position: absolute;
-    top: 32%;
+    /* top: 32%;
     left: 40%;
     transform: translate(-49%, -55%);
-    margin: 0.2rem auto;
+    margin: 0.2rem auto; */
 
 
 }
@@ -3571,7 +3575,7 @@ margin-top: 7%;
 }
 
 i.fab.fa-telegram {
-  font-size: 18px;
+  font-size: 15px;
   /* padding-top: 15px; */
   margin: 0.5rem 0.3rem;
 }
