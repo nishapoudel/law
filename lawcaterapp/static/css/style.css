@@ -71,12 +71,14 @@ button:focus {
 /*---------------------------------------------------- */
 /*----------------------------------------------------*/
 .section_gap {
-  padding: 120px 0; }
+  padding-bottom: 0px ; }
   @media (max-width: 991px) {
     .section_gap {
-      padding: 80px 0; } }
+      padding: 0px 0; } }
 
-
+.teams{
+  padding-bottom: 60px;
+}
 
 .section_gap_top {
   padding-top: 120px; }
@@ -96,8 +98,11 @@ button:focus {
 /* Main Title Area css
 ============================================================================================ */
 .main_title {
-  text-align: center;
-  margin-bottom: 75px; }
+
+    text-align: center;
+    margin-bottom: 35px;
+    margin-top: 2.8rem;
+ }
   .main_title h1 {
     font-size: 36px;
     font-weight: 700;
@@ -1058,7 +1063,7 @@ button:focus {
 /* Start Team Area css
 ============================================================================================ */
 .team-area {
-  padding-top: 90px; }
+  padding-top: 0px; }
 
 .single_member {
   text-align: center;
@@ -3578,4 +3583,16 @@ i.fab.fa-telegram {
   font-size: 15px;
   /* padding-top: 15px; */
   margin: 0.5rem 0.3rem;
+}
+.button {
+  background-color: #4CAF50;
+  border: none;
+  color: white !important;
+  padding: 7x 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+  margin: 1rem auto;
+  cursor: pointer;
 }

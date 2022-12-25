@@ -50,12 +50,13 @@
 				</div>
 			</div>
 		</div>
+
 		<div class="row justify-content-center">
 			<!-- single-blog -->
 
 
 
-            {% for i in cat.post_set.all %}
+            {% for i in cat.post_set.all|slice:":6" %}
 
 			<div class="col-lg-4 col-md-4 col-sm-6">
 				<div class="single-blog">
@@ -110,14 +111,19 @@
 					</div>
 				</div>
 			</div> -->
+            <br>
+            <div class="text-center">
+                <a href="/{{cat.slug}}" type="button" class="btn button  view-more">View All</a>
+              </div>
 		</div>
+
 
 	</div>
     {% endfor %}
 </section>
 
 
-<section class="section_gap team-area">
+<section class="section_gap teams team-area">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-7">
